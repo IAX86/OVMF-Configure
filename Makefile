@@ -1,4 +1,5 @@
-DESTDIR = /usr/bin
+PREFIX = /usr
+DESTDIR = "$PREFIX/bin"
 SHELL = /bin/bash
 
 all: ia32 x64
