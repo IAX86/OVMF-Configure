@@ -1,5 +1,5 @@
-PREFIX = /usr
-DESTDIR = "$PREFIX/bin"
+PREFIX = /usr/local
+DESTDIR = ${PREFIX}/bin
 SHELL = /bin/bash
 
 all: ia32 x64
@@ -12,7 +12,7 @@ ia32: ovmfconfigure-ia32.bash
 
 install: ovmfconfigure-ia32 ovmfconfigure-x64
 	mkdir -p '$(DESTDIR)'
-	cp -t $(DESTDIR) ovmfconfigure-ia32 ovmfconfigure-x64
+	cp -t '$(DESTDIR)' ovmfconfigure-ia32 ovmfconfigure-x64
 
 clean-all:
 	rm -f ovmfconfigure-*
